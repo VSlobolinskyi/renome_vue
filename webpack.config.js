@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-const path = rquire('path');
+const path = require('path');
 
 module.exports = {
 	entry: {
@@ -18,7 +18,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.js$/,
-				exclude: '/node_modules/',
+				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader'
 				}
@@ -47,7 +47,7 @@ module.exports = {
 				loader: "file-loader",
 				options: {
 					name: "[name][contenthash:8].[ext]",
-					outputPath: "assets/fonts",
+					outputPath: "./assets/fonts",
           esModule: false
 				}
 			},
@@ -56,7 +56,7 @@ module.exports = {
         loader: "file-loader",
         options: {
 					name: "[name][contenthash:8].[ext]",
-          outputPath: "assets/images",
+          outputPath: "./assets/images",
           esModule: false
 				}
 			}
@@ -69,7 +69,7 @@ module.exports = {
       filename: "[name].[contenthash:8].css",
       chunkFilename: "[name].[contenthash:8].css",
     }),
-		new htmlWebpackPlugin({
+		new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public", "index.html")
 		})
 	],

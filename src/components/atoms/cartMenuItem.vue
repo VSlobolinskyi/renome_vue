@@ -5,20 +5,19 @@
 </template>
 
 <script>
-
-export default {
-	name: 'cartMenuItem',
-	props: ["item"]
-}
+	export default {
+		name: 'cartMenuItem',
+		props: ["item"]
+	}
 </script>
 
-<style scoped>
+<style lang="scss">
 .cart-menu__text {
 	display: block;
 	margin: 0;
 	padding: 15px 0;
 	font-size: 12px;
-	text-align: center;
+	text-align: center; 
 	letter-spacing: 1px;
 	color: var(--darkBlue);
 	font-family: "Montserrat";
