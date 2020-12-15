@@ -1,5 +1,5 @@
 <template>
-	<ul class="cart-menu" >
+	<ul class="cart-menu" id="cartMenu">
 		<cartMenuItem v-bind:item="item" v-bind:key="item.id"  v-for="item in cartMenuItems" />
 	</ul>
 </template>
@@ -34,7 +34,7 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 	.cart-menu {
 		position: fixed;
 		list-style-type: none;

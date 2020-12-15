@@ -1,38 +1,51 @@
 <template>
   <div id="app">
     <face/>
-    <home/>
-    <about/>
-    <building/>
-    <gallery/>
-    <tail/>
   </div>
 </template>
 
 <script>
-import face from './components/organisms/face.vue'
-import home from './components/organisms/home.vue'
-import about from './components/organisms/about.vue'
-import building from './components/organisms/building.vue'
-import gallery from './components/organisms/gallery.vue'
-import tail from './components/organisms/tail.vue'
-
-export default {
-  name: 'App',
-  components: {
-    face,
-    home,
-    about,
-    building,
-    gallery,
-    tail
-  },
-  data() {
-    
+  import face from './components/organisms/face.vue'
+  export default {
+    name: 'App',
+    components: {
+      face
+    }
   }
-}
 </script>
 
-<style>
+<style lang="scss">
+  @font-face {
+    font-family: "Pacifico";
+    src: url("assets/fonts/Pacifico.ttf");
+  }
 
+  @font-face {
+    font-family: "Axis";
+    src: url("assets/fonts/axis.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    src: url("assets/fonts/Montserrat-Bold.ttf") format("woff");
+  }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .body--disable-scroll {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  img {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
 </style>

@@ -12,7 +12,7 @@ module.exports = {
 	output: {
 		filename: '[name].[contenthash:8].js',
 		path: path.resolve(__dirname, "dist"),
-		chunkFilename: '[name].[contenthash:8].js'
+		chunkFilename: '[name].[contenthash:8].js',
 	},
 	module: {
 		rules: [
@@ -36,7 +36,7 @@ module.exports = {
 					{
 						loader: 'postcss-loader',
 						options: {
-							plgins: () => [autoprefixer()]
+							plgins: () => [autoprefixer()],
 						}
 					},
 					'sass-loader'
@@ -47,17 +47,26 @@ module.exports = {
 				loader: "file-loader",
 				options: {
 					name: "[name][contenthash:8].[ext]",
-					outputPath: "./assets/fonts",
+					outputPath: "@/assets/fonts",
           esModule: false
 				}
 			},
 			{
-        test: /\.(png|jpe?g|gif|webm|mp4|svg)$/,
+        test: /\.(png|jpe?g|gif|webm|mp4)$/,
         loader: "file-loader",
         options: {
 					name: "[name][contenthash:8].[ext]",
-          outputPath: "./assets/images",
+          outputPath: "@/assets/images",
           esModule: false
+				}
+			},
+			{
+				test: /\.svg$/,
+				loader: "file-loader",
+				options: {
+					name: "[name][contenthash:8].[ext]",
+					outputPath: "@/assets/icons",
+					esModule: false
 				}
 			}
 		]
